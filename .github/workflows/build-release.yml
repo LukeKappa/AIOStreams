@@ -37,7 +37,8 @@ jobs:
 
       - name: Package Build Artifacts
         run: |
-          tar --exclude='./.git' --exclude='./aiostreams-build.tar.gz' -czf aiostreams-build.tar.gz .
+          tar --exclude='./.git' -czf /tmp/aiostreams-build.tar.gz .
+          mv /tmp/aiostreams-build.tar.gz .
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
